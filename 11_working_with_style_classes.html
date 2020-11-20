@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .active {
+            color: blue;
+            font-size: 40px;
+        }
+        .notactive {
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+</head>
+    <div id="app">
+        <div
+        v-on:mouseover="isActive=true"
+        v-on:mouseleave="isActive=false"
+        :class="isActive ? 'active' : 'notactive'">
+        {{ message }}
+    </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: "Hello World",
+                isActive: false
+            }  
+        })
+    </script>
+</html>

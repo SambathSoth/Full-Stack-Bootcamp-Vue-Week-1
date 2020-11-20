@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+    <div id="app">
+        <kit></kit>
+    </div>
+    <script>
+        Vue.component("kit", {
+            data() {
+                return {
+                    schoolName: "Kirirom Institute of Technology",
+                    result: 0
+                }
+            },
+            methods: {
+                getAscii: function() {
+                    this.result = 0
+                    for(i = 0; i < this.schoolName.length; i++) {
+                        this.result += this.schoolName.charCodeAt(i)
+                    }
+                }
+            },
+            template: `
+                <div>
+                    <button v-on:click="getAscii">{{ result }}</button>
+                </div>
+                `
+        });
+        var app = new Vue({
+            el: '#app'
+        })
+    </script>
+</html>
+<!-- Vue component used to create custom elements that can be reused in HTML. We use vue component when we need to use one HTML element more than one time. -->

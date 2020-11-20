@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+    <div id="app">
+        <form action="">
+            <input type="checkbox" value="Menu1" v-model="menus">
+            <input type="checkbox" value="Menu2" v-model="menus">
+            <input type="checkbox" value="Menu3" v-model="menus">
+        </form>
+        <h1>{{ menus }}</h1>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {  
+                menus: []
+            }  
+        })
+    </script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+    <div id="app">
+        <input type="text" v-model="name" placeholder="Enter your name here">
+        <h1>{{ name }}</h1>
+        <div v-if="isActive"></div>
+        <div v-else-if="name === 'Sambath'" v-bind:style="{ color: 'green' }">Access Granted welcome Mr/Ms. {{ name }}</div>
+        <div v-else  v-bind:style="{ color: 'red' }">Access Denied Sorry Mr/Ms. {{ name }}</div>
+        
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {  
+                name: "",
+                isActive: false
+            }  
+        })
+    </script>
+</html>

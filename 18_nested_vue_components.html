@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+    <div id="app">
+        <outer></outer>
+        
+    </div>
+    <script>
+        Vue.component("inner", {
+            data() {
+                return {
+                    studentDetails: [
+                        {id: 10, name: "Messi", age: 35},
+                        {id: 7, name: "Ronaldo", age: 34},
+                        {id: 11, name: "Neyma", age: 28},
+                        {id: 8, name: "Mbappe", age: 22},
+                        {id: 18, name: "Debrune", age: 27}
+                    ]
+                }
+            },
+            template: `
+            <div>
+                <li v-for="(student, id) in studentDetails" :key="studentDetails.id">
+                    {{ student }}
+                </li>
+            </div>
+            `
+        });
+        Vue.component("outer", {
+            template: `
+                <div>
+                    <ol>
+                        <inner></inner>
+                    </ol>
+                </div>
+            `
+        })
+        var app = new Vue({
+            el: '#app'
+        })
+    </script>
+</html>
+<!-- nested Vue components used when we need to put the component inside other component in vue application. -->

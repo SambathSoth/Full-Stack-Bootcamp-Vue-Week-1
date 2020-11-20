@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+    <div id="app">
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {  
+                status: false,
+            },
+            watch: {
+                status: function() {
+                    console.log(this.status)
+                }
+            },  
+        })
+    </script>
+</html>
+<!-- The Vue.js Watcher used to listen to the component data and run whenever they change a particular property. The watcher is a unique Vue.js feature that lets us keep an eye on one property of the component state and run a function when that property value changes. -->

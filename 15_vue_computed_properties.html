@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+    <div id="app">
+        {{ computeName }}
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                name: ""
+            },
+            computed: {
+                computeName: () => {
+                    name = "Sambath"
+                    console.log(name.split("").reverse().join(""))
+                }
+            }, 
+        })
+    </script>
+</html>
+<!-- A computed property is used to used when we have to handle complex logic and operations -->

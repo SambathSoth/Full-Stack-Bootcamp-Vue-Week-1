@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+    <div id="app">
+        <h1 
+            v-on:mouseover="reverse"
+            v-on:mouseleave="reverse">
+            {{ message }}
+        </h1>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {  
+                message: "Hello World"
+            },
+            methods: {
+                reverse: function() {
+                    this.message = this.message.split("").reverse().join("")
+                },
+            }
+        })
+    </script>
+</html>

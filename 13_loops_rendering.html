@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+    <div id="app">
+        <table>
+            <ol>
+                <tr v-for="(student, id) in table_details" :key="table_details.id">
+                    <td>{{ student.id + ":" + student.name + ":" + student.age}}</td>
+                </tr>
+            </ol>
+        </table>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {  
+                table_details: [
+                    {id: 10, name: "Messi", age: 35},
+                    {id: 7, name: "Ronaldo", age: 34},
+                    {id: 11, name: "Neyma", age: 28},
+                    {id: 8, name: "Mbappe", age: 22},
+                    {id: 18, name: "Debrune", age: 27}
+                ]
+            }  
+        })
+    </script>
+</html>
